@@ -1,63 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aidbrm <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 01:21:01 by aidbrm            #+#    #+#             */
-/*   Updated: 2025/10/23 02:19:34 by aidbrm           ###   ########.fr       */
+/*   Created: 2025/10/20 14:36:51 by aidbrm            #+#    #+#             */
+/*   Updated: 2025/10/21 14:56:08 by aidbrm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-static int	lenght(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char ))
 {
-	int	len;
+	unsigned int	i;
+	char			*p;
 
-	len = (n <= 0);
-	while (n != 0)
-	{
-		len++;
-		n /= 10;
-	}
-	return (len);
-}
-
-char	*ft_itoa(int n)
-{
-	char	*p;
-	int		len;
-	long	nb;
-
-	nb = n;
-	len = lenght(n);
-	p = (char *)malloc(sizeof(char ) * (len + 1));
+	if (!s || !f)
+		return (NULL);
+	p = malloc(ft_strlen(s) + 1);
 	if (!p)
 		return (NULL);
-	p[len] = '\0';
-	if (nb == 0)
+	i = 0;
+	while (*s)
 	{
-		p[0] = '0';
-		return (p);
+		p[i] = f(i, *s);
+		s++;
+		i++;
 	}
-	if (nb < 0)
-	{
-		p[0] = '-';
-		nb = -nb;
-	}
-	while (nb > 0)
-	{
-		p[--len] = (nb % 10) + '0';
-		nb /= 10;
-	}
+	p[i] = '\0';
 	return (p);
 }
 /*#include <stdio.h>
 int main()
 {
-	int	n;
-	n = -2005;
-	printf("%s\n",ft_itoa(n)); 
+	char    str[] = "libftproject";
+	char    *result;
+
+	result = ft_strmapi(str, my_func);
+	if (!result)
+		return (1);
+	printf("Original : %s\n", str);
+	printf("Modified : %s\n", result);
+
+	free(result);
+	return (0);
 }*/
