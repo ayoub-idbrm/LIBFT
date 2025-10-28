@@ -6,7 +6,7 @@
 /*   By: aidbrm <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:36:33 by aidbrm            #+#    #+#             */
-/*   Updated: 2025/10/20 04:47:05 by aidbrm           ###   ########.fr       */
+/*   Updated: 2025/10/28 02:28:32 by aidbrm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!little)
+	if (little[0] == '\0')
 		return ((char *)big);
 	i = 0;
 	while (big[i] && i < len)

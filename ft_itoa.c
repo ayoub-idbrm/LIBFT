@@ -6,11 +6,11 @@
 /*   By: aidbrm <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 01:21:01 by aidbrm            #+#    #+#             */
-/*   Updated: 2025/10/23 02:19:34 by aidbrm           ###   ########.fr       */
+/*   Updated: 2025/10/28 13:21:34 by aidbrm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	lenght(int n)
 {
@@ -38,10 +38,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	p[len] = '\0';
 	if (nb == 0)
-	{
 		p[0] = '0';
-		return (p);
-	}
 	if (nb < 0)
 	{
 		p[0] = '-';

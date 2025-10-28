@@ -6,7 +6,7 @@
 /*   By: aidbrm <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 21:36:56 by aidbrm            #+#    #+#             */
-/*   Updated: 2025/10/20 04:37:11 by aidbrm           ###   ########.fr       */
+/*   Updated: 2025/10/28 02:12:14 by aidbrm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (0);
 	while (s[i])
 		i++;
 	return (i);

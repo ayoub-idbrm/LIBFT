@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aidbrm <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 16:35:24 by aidbrm            #+#    #+#             */
-/*   Updated: 2025/10/27 11:28:45 by aidbrm           ###   ########.fr       */
+/*   Created: 2025/10/28 13:09:43 by aidbrm            #+#    #+#             */
+/*   Updated: 2025/10/28 13:15:38 by aidbrm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**freee(char **str, int i)
+static char	**ft_free(char **str, int i)
 {
 	i--;
 	while (i >= 0)
@@ -24,7 +24,7 @@ static char	**freee(char **str, int i)
 	return (NULL);
 }
 
-static int	count(char const *s, char c)
+static int	ft_counter(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -36,63 +36,41 @@ static int	count(char const *s, char c)
 	while (s[i])
 	{
 		if (s[i] != c && (s[i + 1] == c || !s[i + 1]))
+		{
 			j++;
-		i++;
+			i++;
+		}
+		else
+			i++;
 	}
 	return (j);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**p;
+	char	**str;
 	size_t	end;
-	size_t	srt;
+	size_t	start;
 	int		i;
-	int		word;
 
-	word = count(s, c);
-	p = malloc((word + 1) * sizeof(char *));
-	if (!p || !s)
-		return (NULL);
-	i = 0;
-	srt = 0;
-	while (i < word)
+	str = malloc((ft_counter(s, c) + 1) * sizeof(char *));
+	if (!s || !str)
+		return (0);
+	i = -1;
+	end = 0;
+	start = 0;
+	while (++i < ft_counter(s, c))
 	{
-		while (s[srt] == c)
-			srt++;
-		end = srt;
+		while (s[start] == c)
+			start++;
+		end = start;
 		while (s[end] != c && s[end])
 			end++;
-		p[i] = ft_substr(s, srt, (end - srt));
-		if (!p[i])
-			return (freee(p, i));
-		srt = end;
-		i++;
+		str[i] = ft_substr(s, start, (end - start));
+		start = end;
+		if (str[i] == NULL)
+			return (ft_free(str, i));
 	}
-	p[i] = NULL;
-	return (p);
-}
-#include <stdio.h>
-int main()
-{
-	char **result;
-    int i;
-
-    result = ft_split("Hello,,,,,,,,,,,,,World,this,is,split", ',');
-    if (!result)
-    {
-        printf("ft_split returned NULL\n");
-        return 1;
-    }
-
-    i = 0;
-    while (result[i])
-    {
-        printf("word[%d]: %s\n", i, result[i]);
-        free(result[i]);
-        i++;
-    }
-    free(result);
-
-    return 0;
+	str[i] = 0;
+	return (str);
 }
