@@ -6,7 +6,7 @@
 /*   By: aidbrm <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:59:30 by aidbrm            #+#    #+#             */
-/*   Updated: 2025/10/27 11:08:26 by aidbrm           ###   ########.fr       */
+/*   Updated: 2025/10/29 17:14:18 by aidbrm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);

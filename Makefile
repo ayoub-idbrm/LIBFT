@@ -12,7 +12,7 @@ RM	= rm -f
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -25,4 +25,3 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
