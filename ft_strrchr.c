@@ -6,7 +6,7 @@
 /*   By: aidbrm <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:39:43 by aidbrm            #+#    #+#             */
-/*   Updated: 2025/10/20 04:51:17 by aidbrm           ###   ########.fr       */
+/*   Updated: 2025/11/01 15:50:47 by aidbrm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*#include <stdio.h>
-int main()
-{
-	char	s[] = "hello allo";
-	char *res = ft_strrchr(s, 'z');
-	printf("%s\n" ,res);
-}*/

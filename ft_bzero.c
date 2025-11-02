@@ -6,12 +6,11 @@
 /*   By: aidbrm <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 01:37:08 by aidbrm            #+#    #+#             */
-/*   Updated: 2025/10/19 14:47:02 by aidbrm           ###   ########.fr       */
+/*   Updated: 2025/10/30 11:57:32 by aidbrm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stddef.h>
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -26,10 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-/*#include <stdio.h>
-int main()
-{
-	char 	p[] = "hello ayoub";
-	ft_bzero(p, 5);
-	printf("%s\n", p + 5);
-}*/

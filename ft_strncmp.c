@@ -25,11 +25,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*#include <stdio.h>
-int main()
-{
-	char s[] = "";
-	char d[] = "";
-	int res = ft_strncmp(s, d ,6);
-	printf("%d\n", res);
-}*/

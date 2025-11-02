@@ -27,10 +27,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
-/*#include <stdio.h>
-int main()
-{
-	char	s[] = "";
-	char	*r = ft_strchr(s, 'i');
-	printf("%s\n", r);
-}*/

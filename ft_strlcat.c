@@ -31,11 +31,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[d_len + i] = '\0';
 	return (d_len + s_len);
 }
-/*#include <stdio.h>
-int main()
-{
-	char	dst[] = "hello ";
-	char	src[] = "world!";
-	printf("%ld", ft_strlcat(dst, src, 10));
-
-}*/

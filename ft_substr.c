@@ -49,10 +49,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	copy(p, s, start, len);
 	return (p);
 }
-/*#include <stdio.h>
-int main()
-{
-	char s[] = "hello";
-	char *p  = ft_substr(s, 10, 2);
-	printf("%s\n", p);
-}*/

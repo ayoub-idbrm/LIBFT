@@ -6,7 +6,7 @@
 /*   By: aidbrm <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 23:43:16 by aidbrm            #+#    #+#             */
-/*   Updated: 2025/10/28 02:17:34 by aidbrm           ###   ########.fr       */
+/*   Updated: 2025/10/31 17:34:38 by aidbrm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,3 @@ int	ft_atoi(const char *ptr)
 	}
 	return (res * sign);
 }
-/*#include <stdio.h>
-int main()
-{
-	const char	*p;
-	p = "     --+32443";
-
-	int	 res = ft_atoi(p);
-	printf("%d\n", res);
-}*/

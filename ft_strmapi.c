@@ -32,18 +32,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char ))
 	p[i] = '\0';
 	return (p);
 }
-/*#include <stdio.h>
-int main()
-{
-	char    str[] = "libftproject";
-	char    *result;
-
-	result = ft_strmapi(str, my_func);
-	if (!result)
-		return (1);
-	printf("Original : %s\n", str);
-	printf("Modified : %s\n", result);
-
-	free(result);
-	return (0);
-}*/

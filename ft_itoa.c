@@ -6,7 +6,7 @@
 /*   By: aidbrm <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 01:21:01 by aidbrm            #+#    #+#             */
-/*   Updated: 2025/10/28 13:21:34 by aidbrm           ###   ########.fr       */
+/*   Updated: 2025/10/30 15:18:49 by aidbrm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,22 @@
 
 static int	lenght(int n)
 {
-	int	len;
+	int		len;
+	long	nb;
 
-	len = (n <= 0);
-	while (n != 0)
+	nb = n;
+	if (nb == 0)
+		return (1);
+	len = 0;
+	if (nb < 0)
 	{
 		len++;
-		n /= 10;
+		nb = -nb;
+	}
+	while (nb > 0)
+	{
+		len++;
+		nb /= 10;
 	}
 	return (len);
 }
@@ -51,10 +60,3 @@ char	*ft_itoa(int n)
 	}
 	return (p);
 }
-/*#include <stdio.h>
-int main()
-{
-	int	n;
-	n = -2005;
-	printf("%s\n",ft_itoa(n)); 
-}*/

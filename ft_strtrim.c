@@ -40,9 +40,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ptr[i] = '\0';
 	return (ptr);
 }
-/*int main()
-{
-	char 	*s = "---hello---";
-	char 	*set = "-";
-	printf("%s\n", ft_strtrim(s, set));
-}*/
